@@ -1,0 +1,12 @@
+{
+  "name": "viewer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:marscolony-io/viewer.git",
+  "author": "crystalbit <crystalbit@mail.ru>",
+  "license": "MIT",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.0.0",
+    "truffle-privatekey-provider": "^1.5.0"
+  }
+}
