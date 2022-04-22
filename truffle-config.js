@@ -62,12 +62,13 @@ module.exports = {
           timeoutBlocks: 200,
         });
       },
+      gasPrice: 50 * 1e9,
       network_id: 1666600000,
     },
   },
   compilers: {
     solc: {
-      version: '0.8.5',
+      version: '0.8.11',
     },
   },
 };

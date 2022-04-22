@@ -6,6 +6,7 @@
   "author": "crystalbit <crystalbit@mail.ru>",
   "license": "MIT",
   "dependencies": {
+    "@openzeppelin/contracts": "^4.4.2",
     "@truffle/hdwallet-provider": "^2.0.0",
     "truffle-privatekey-provider": "^1.5.0"
   }

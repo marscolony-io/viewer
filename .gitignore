@@ -5,3 +5,7 @@ secrets.json
 build/*
 .openzeppelin/.session
 .openzeppelin/*
+
+.idea
+
+flattened.txt

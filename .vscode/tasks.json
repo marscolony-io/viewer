@@ -32,6 +32,16 @@
         "kind": "build",
         "isDefault": true
       }
+    },
+    {
+      "label": "harmony flattener",
+      "type": "shell",
+      "command": "npx harmony-flattener ${file} > flattened.txt",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
     }
   ]
 }
