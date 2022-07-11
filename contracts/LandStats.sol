@@ -3,6 +3,7 @@ pragma solidity =0.8.11;
 
 import './IGameManager.sol';
 import './IMC.sol';
+import './interfaces/ICLNY.sol';
 
 contract LandStats {
   struct PointAndLevel {
@@ -22,15 +23,23 @@ contract LandStats {
     PointAndLevel powerProduction;
   }
 
+  struct ClnyStat {
+    uint256 burned;
+    uint256 minted;
+  }
+
   IMC public MC;
   IGameManager public GameManager;
+  ICLNY public CLNY;
 
   constructor (
     IGameManager _GameManager,
-    IMC _MC
+    IMC _MC,
+    ICLNY _CLNY
   ) {
     GameManager = _GameManager;
     MC = _MC;
+    CLNY = _CLNY;
   }
 
   function getLandData(uint256[] calldata tokenIds) external view returns (LandInfo[] memory) {
@@ -60,5 +69,14 @@ contract LandStats {
       data[i].powerProduction.y = ppPlace.y;
     }
     return data;
+  }
+
+  function gelClnyStat() external view returns (ClnyStat memory result) {
+    for (uint256 reason = 0; reason <= 99; reason++) {
+      result.burned += CLNY.burnedStats(reason);
+      result.minted += CLNY.mintedStats(reason);
+    }
+
+    return result;
   }
 }
